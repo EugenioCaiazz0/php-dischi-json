@@ -15,7 +15,35 @@
 
     <title>PHP-dischi-json</title>
 </head>
+
 <body>
     
+<div id="app">
+
+    <ul class="list-group">
+        <li v-for="(item, index) in list"
+        :key="index"
+        class="list-group-item d-flex justify-content-between"
+        >
+        <div class="card d-flex w-50 my-5 mx-auto border-primary  ">
+            <div class="card-body">
+            <h5 class="card-title"> {{item.title}} </h5>
+            <img :src="item.poster" class="card-img-top" :alt="item.title">
+            <p class="card-text"> {{item.author}} </p>
+            <p class="card-text"> {{item.year}} </p>
+            <p class="card-text"> {{item.genre}} </p>
+        </div>
+        </li>
+    </ul>
+
+</div>
+
+<script type="module" src="/script/script.js"></script>
+
 </body>
+
 </html>
+
+
+
+    

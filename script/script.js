@@ -4,8 +4,8 @@ createApp ({
     
     data() {
         return {
-            title: `dischi`,
-            apiUrl: `server.php`
+            apiUrl: `server.php`,
+            list: [],
         }
     },
     
@@ -14,6 +14,7 @@ createApp ({
             axios.get(this.apiUrl) /* richiamo l'api per riceverne dati tramite axios */
             .then( result => {
                 console.log(result.data); /* stampo in console il risultato */
+                this.list = result.data;
             })
         }  
     },

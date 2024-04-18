@@ -34,7 +34,8 @@ createApp ({
 
             axios.post(this.apiUrl,data)
             .then( result => {
-                console.log(result.data)
+                console.log(result.data);
+                this.list = result.data;
             })
         }  
     },

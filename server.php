@@ -5,7 +5,7 @@ $json_string = file_get_contents('data/dischi.json');
 var_dump($json_dischi);
 
 /* decodifico la stringa in un elemento php */
-$list = json_decode($json_string);
+$list = json_decode($json_string, true);
 var_dump($lista_dischi);
 
 if(isset($_POST['newDiskTitle'])) { /* verifichiamo l'esistenza del nuovo disco, per poi aggiornare il Json */
@@ -19,7 +19,7 @@ if(isset($_POST['newDiskTitle'])) { /* verifichiamo l'esistenza del nuovo disco,
 
     /* aggiungo l'elemento */
     $list[] = $new_item; 
-    file_put_contents('dischi.json', $list);
+    file_put_contents('dischi.json', json_encode($list));
 }
 
 

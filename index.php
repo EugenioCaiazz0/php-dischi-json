@@ -21,10 +21,10 @@
 <div id="app">
 
         <div v-for="(item, index) in list"
-        :key="item.index"
+        :key="index"
         class="card d-flex w-50 my-5 mx-auto border-primary ">
             <div class="card-body">
-            <h5 class="card-title"> <?php echo $list['title'] ?> </h5>
+            <h5 class="card-title"> {{item.title}} </h5>
             <img :src="item.poster" class="card-img-top" :alt="item.title">
             <p class="card-text"> {{item.author}} </p>
             <p class="card-text"> {{item.year}} </p>
@@ -34,23 +34,23 @@
         <div class="input-group my-3">
             <input class="form-control"
             v-model.trim="newDisk.title"
-            placeholder="New disk"
+            placeholder="title"
             type="text" >
             <input class="form-control"
             v-model.trim="newDisk.author"
-            placeholder="New disk"
+            placeholder="author"
             type="text" >
             <input class="form-control"
             v-model.trim="newDisk.year"
-            placeholder="New disk"
+            placeholder="year"
             type="text" >
             <input class="form-control"
             v-model.trim="newDisk.poster"
-            placeholder="New disk"
+            placeholder="poster"
             type="text" >
             <input class="form-control"
             v-model.trim="newDisk.genre"
-            placeholder="New disk"
+            placeholder="genre"
             type="text" >
         </div>
         <div>

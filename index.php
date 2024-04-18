@@ -20,25 +20,47 @@
     
 <div id="app">
 
-    <ul class="list-group">
-        <li v-for="(item, index) in list"
-        :key="index"
-        class="list-group-item d-flex justify-content-between"
-        >
-        <div class="card d-flex w-50 my-5 mx-auto border-primary  ">
+        <div v-for="(item, index) in list"
+        :key="item.index"
+        class="card d-flex w-50 my-5 mx-auto border-primary ">
             <div class="card-body">
-            <h5 class="card-title"> {{item.title}} </h5>
+            <h5 class="card-title"> <?php echo $list['title'] ?> </h5>
             <img :src="item.poster" class="card-img-top" :alt="item.title">
             <p class="card-text"> {{item.author}} </p>
             <p class="card-text"> {{item.year}} </p>
             <p class="card-text"> {{item.genre}} </p>
         </div>
-        </li>
-    </ul>
 
+        <div class="input-group my-3">
+            <input class="form-control"
+            v-model.trim="newDisk.title"
+            placeholder="New disk"
+            type="text" >
+            <input class="form-control"
+            v-model.trim="newDisk.author"
+            placeholder="New disk"
+            type="text" >
+            <input class="form-control"
+            v-model.trim="newDisk.year"
+            placeholder="New disk"
+            type="text" >
+            <input class="form-control"
+            v-model.trim="newDisk.poster"
+            placeholder="New disk"
+            type="text" >
+            <input class="form-control"
+            v-model.trim="newDisk.genre"
+            placeholder="New disk"
+            type="text" >
+        </div>
+        <div>
+            <button type="button" class="btn btn-outline-primary"
+            @click.stop="addDisk"
+            > Aggiungi disco </button></div>
+        
 </div>
 
-<script type="module" src="/script/script.js"></script>
+<script type="module" src="script/script.js"></script>
 
 </body>
 

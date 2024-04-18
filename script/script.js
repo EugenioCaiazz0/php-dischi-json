@@ -31,6 +31,11 @@ createApp ({
             data.append(`newDiskYear`), this.newDisk.year;
             data.append(`newDiskPoster`), this.newDisk.poster;
             data.append(`newDiskGenre`), this.newDisk.genre;
+
+            axios.post(this.apiUrl,data)
+            .then( result => {
+                console.log(result.data)
+            })
         }  
     },
 

@@ -8,6 +8,21 @@ var_dump($json_dischi);
 $list = json_decode($json_string);
 var_dump($lista_dischi);
 
+if(isset($_POST['newDiskTitle'])) { /* verifichiamo l'esistenza del nuovo disco, per poi aggiornare il Json */
+    $new_item = [
+        'title' => $_POST['newDiskTitle'],
+        'author' => $_POST['newDiskAuthor'],
+        'year' => $_POST['newDiskYear'],
+        'poster' => $_POST['newDiskPoster'],
+        'genre' => $_POST['newDiskGenre']
+    ];
+
+    /* aggiungo l'elemento */
+    $list[] = $new_item; 
+    file_put_contents('dischi.json', $list);
+}
+
+
 header('Content-Type: application/json'); /* ricompongo i dati sotto forma di json */
 
 echo json_encode($list);
